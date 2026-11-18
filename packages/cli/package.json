@@ -1,0 +1,52 @@
+{
+  "name": "@chomp/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/commands/diff.test.ts src/visualizer/rulesConfig.test.ts src/visualizer/pluginPresentationApi.test.ts src/visualizer/cloudLayoutClient.test.ts src/visualizer/sourceAccess.test.ts src/ports/portHydrator.test.ts src/visualizer/visualLinter.test.ts src/visualizer/headlessVisualizerCapture.test.ts"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "bin": {
+    "chomp": "./src/index.ts"
+  },
+  "files": [
+    "src/index.ts",
+    "src/commands",
+    "src/ports",
+    "src/utils",
+    "src/visualizer",
+    "!src/**/*.test.ts",
+    "!src/visualizer/headlessVisualizerCapture.ts"
+  ],
+  "dependencies": {
+    "@chomp/core": "workspace:*",
+    "@chomp/db": "workspace:*",
+    "@chomp/mcp": "workspace:^",
+    "@google/generative-ai": "^0.24.1",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "better-sqlite3": "^11.0.0",
+    "commander": "^12.1.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "elkjs": "^0.12.0",
+    "express": "^5.2.1",
+    "typescript": "^5.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "tsx": "^4.19.0"
+  }
+}

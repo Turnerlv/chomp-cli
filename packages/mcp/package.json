@@ -1,0 +1,23 @@
+{
+  "name": "@chomp/mcp",
+  "version": "0.1.0",
+  "description": "Chomp MCP Server for Agentic Architectural Querying",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/intelligence.test.ts src/designSystemPlugin.test.ts src/designSystemGeneric.test.ts src/shimsAndConventions.test.ts src/diffTrust.test.ts"
+  },
+  "dependencies": {
+    "@chomp/core": "workspace:*",
+    "@chomp/db": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "typescript": "^5.3.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.3.3"
+  }
+}
